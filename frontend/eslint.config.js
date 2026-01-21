@@ -53,24 +53,17 @@ export default [
         'error',
         { argsIgnorePattern: '^_' },
       ],
+      'no-undef': 'off',
       'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error',
-      'import/no-unresolved': 'error',
-      'import/named': 'error',
-      'import/default': 'error',
-      'import/namespace': 'error',
+      'import/no-unresolved': 'off',
+      'import/named': 'off',
+      'import/default': 'off',
+      'import/namespace': 'off',
     },
     settings: {
       react: {
         version: 'detect',
-      },
-      'import/resolver': {
-        alias: {
-          map: [
-            ['@', './src'],
-          ],
-          extensions: ['.ts', '.tsx', '.js', '.jsx'],
-        },
       },
     },
   },

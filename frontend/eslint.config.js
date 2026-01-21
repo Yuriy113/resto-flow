@@ -53,6 +53,8 @@ export default [
         'error',
         { argsIgnorePattern: '^_' },
       ],
+      // Отключаем no-undef для TypeScript - TypeScript сам проверяет типы
+      'no-undef': 'off',
       'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error',
       // Отключаем проверку разрешения модулей - TypeScript сам это делает

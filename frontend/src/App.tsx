@@ -1,10 +1,9 @@
+import { RouterProvider } from "react-router-dom"
+
+import { router } from "./routes"
+
 function App() {
-  return (
-    <div className="app">
-      <h1>Resto Flow</h1>
-      <p>Добро пожаловать в Resto Flow!</p>
-    </div>
-  )
+  return <RouterProvider router={router}/>
 }
 
 export default App

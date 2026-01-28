@@ -24,3 +24,13 @@
     display: block;
     border-radius: 12px;
 }
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.moreButton, .addButton {
+    width: 50%;
+}

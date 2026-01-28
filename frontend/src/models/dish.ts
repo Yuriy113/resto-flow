@@ -1,4 +1,5 @@
 interface IDish {
+    id: number;
     title: string;
     imageSrc: string;
     price: number;

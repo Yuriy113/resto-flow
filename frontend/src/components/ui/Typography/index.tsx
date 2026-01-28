@@ -1,6 +1,8 @@
 import cn from 'clsx';
 import React, { ReactElement } from 'react';
 
+import styles from './Typography.module.css';
+
 type TVariant =
     'header1' |
     'header2' |
@@ -43,6 +45,7 @@ const Typography = React.forwardRef<TComponent, ITypographyProps>(
             <Component
                 ref={ref}
                 className={cn(
+                    styles.typography,
                     {
                         header1: variant === 'header1',
                         header2: variant === 'header2',

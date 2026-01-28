@@ -19,14 +19,11 @@ export const DishCard = (props: TDishCardProps) => {
 
     return (
         <div className={cn(styles.card, styles[variant])}>
-            <Typography>{dish.title}</Typography>
+            <Typography variant="header4">{dish.title}</Typography>
             <img className={styles.image} src={dish.imageSrc} alt="title" />
             <Typography>{dish.price} ₽</Typography>
             {(variant === 'medium' || variant === 'full') && (
                 <div>{dish.description}</div>
-            )}
-            {variant !== 'full' && (
-                <Button onClick={() => setIsModalOpen(true)}>Подробнее</Button>
             )}
             {variant === 'full' && (
                 <>
@@ -37,6 +34,22 @@ export const DishCard = (props: TDishCardProps) => {
                     ))}
                 </>
             )}
+            <div className={styles.buttons}>
+                {variant !== 'full' && (
+                    <Button
+                        className={styles.moreButton}
+                        onClick={() => setIsModalOpen(true)}
+                    >
+                        <Typography variant="textButton">Подробнее</Typography>
+                    </Button>
+                )}
+                <Button
+                    className={variant !== 'full' ? styles.addButton : ''}
+                    onClick={() => console.log(`add to cart ${dish.id}`)}
+                >
+                    <Typography variant="textButton">Добавить в корзину</Typography>
+                </Button>
+            </div>
             {isModalOpen && (
                 <Modal onClose={() => setIsModalOpen(false)}>
                     <DishCard variant="full" dish={dish} />

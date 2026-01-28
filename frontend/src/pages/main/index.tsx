@@ -1,17 +1,12 @@
-import { DishCard } from "components/ui/DishCard";
-import { Typography } from "components/ui/Typography";
+import { dishes } from "api/mock";
+import { DishList } from "components/ui/DishList";
+
+import styles from './MainPage.module.css';
 
 export const MainPage = () => {
     return (
-        <div>
-            <h1>Resto Flow</h1>
-            <Typography >Добро пожаловать в Resto Flow!</Typography>
-
-            <h2>Завтраки</h2>
-
-            <DishCard variant="short" src="https://bonduelle.ru/storage/recipes/8ec67f9adbbea5b1a3db330c5e44c185.jpeg" title="плов"/>
-            <DishCard variant="short" src="https://bonduelle.ru/storage/recipes/8ec67f9adbbea5b1a3db330c5e44c185.jpeg" title="плов"/>
-            <DishCard variant="short" src="https://bonduelle.ru/storage/recipes/8ec67f9adbbea5b1a3db330c5e44c185.jpeg" title="плов"/>
+        <div className={styles.container}>
+            <DishList title="Завтраки" dishes={dishes}/>
         </div>
     );
 };

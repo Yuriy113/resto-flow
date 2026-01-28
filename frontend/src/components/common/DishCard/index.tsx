@@ -1,10 +1,11 @@
 import cn from 'clsx';
+import { Button } from 'components/ui/Button';
+import { Modal } from 'components/ui/Modal';
+import { Typography } from 'components/ui/Typography';
 import { IDish } from 'models/dish';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { CartContext } from 'store/cart/cart-context';
 
-import { Button } from '../Button';
-import { Modal } from '../Modal';
-import { Typography } from '../Typography';
 import styles from './DishCard.module.css';
 
 type TDishCardProps = {
@@ -13,6 +14,7 @@ type TDishCardProps = {
 };
 
 export const DishCard = (props: TDishCardProps) => {
+    const { addToCart } = useContext(CartContext);
     const { variant = 'short', dish } = props;
 
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -45,7 +47,7 @@ export const DishCard = (props: TDishCardProps) => {
                 )}
                 <Button
                     className={variant !== 'full' ? styles.addButton : ''}
-                    onClick={() => console.log(`add to cart ${dish.id}`)}
+                    onClick={() => addToCart(dish.id)}
                 >
                     <Typography variant="textButton">Добавить в корзину</Typography>
                 </Button>

@@ -1,6 +1,6 @@
+import { DishCard } from "components/common/DishCard";
 import { IDish } from "models/dish";
 
-import { DishCard } from "../DishCard";
 import styles from './DishList.module.css';
 
 type TDishListProps = {

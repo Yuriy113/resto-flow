@@ -1,5 +1,5 @@
 import { dishes } from "api/mock";
-import { DishList } from "components/ui/DishList";
+import { DishList } from "components/common/DishList";
 
 import styles from './MainPage.module.css';
 

@@ -6,6 +6,7 @@ export type TCartContext = {
     addToCart: (dishId: IDish['id']) => void;
     removeFromCart: (dishId: IDish['id']) => void;
     clearCart: () => void;
+    getCartTotal: () => number;
 }
 
 export const CartContext = createContext<TCartContext>({
@@ -13,4 +14,5 @@ export const CartContext = createContext<TCartContext>({
     addToCart: () => {},
     removeFromCart: () => {},
     clearCart: () => {},
+    getCartTotal: () => 0,
 });

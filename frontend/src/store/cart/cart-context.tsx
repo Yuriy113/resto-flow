@@ -29,14 +29,19 @@ export const CartProvider = ({ children }: TCartProviderProps) => {
         setCart([]);
     }, []);
 
+    const getCartTotal = useCallback(() => {
+        return cart.reduce((acc, item) => acc + item.price, 0);
+    }, [cart]);
+
     const value = useMemo(
         () => ({
             cart,
             addToCart,
             removeFromCart,
             clearCart,
+            getCartTotal,
         }),
-        [cart, addToCart, removeFromCart, clearCart],
+        [cart, addToCart, removeFromCart, clearCart, getCartTotal],
     );
 
     return (
